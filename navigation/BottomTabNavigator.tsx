@@ -9,30 +9,41 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
-import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import HistScreen from '../screens/HistScreen';
+import MyObjScreen from '../screens/MyObjScreen';
+import SearchScreen from '../screens/SearchScreen';
+import { BottomTabParamList, HistParamList, MyObjParamList, SearchParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      initialRouteName="MyObj"
+      tabBarOptions={{
+        activeBackgroundColor: '#252525',
+        inactiveBackgroundColor: '#252525',
+        activeTintColor: 'white',
+        inactiveTintColor: '#DCDCDC'}}
+      >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Hist"
+        component={HistNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="MyObj"
+        component={MyObjNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Search"
+        component={SearchNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -44,35 +55,72 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} color={'#E91E63'} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const HistStack = createStackNavigator<HistParamList>();
 
-function TabOneNavigator() {
+function HistNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+    <HistStack.Navigator>
+      <HistStack.Screen
+        name="HistScreen"
+        component={HistScreen}
+        options={{
+          headerTitle: 'Historique',
+          headerTitleStyle: {
+            color: '#DCDCDC',
+          },
+          headerStyle: {
+            backgroundColor: '#E91E63',
+          }
+        }}
+        
       />
-    </TabOneStack.Navigator>
+    </HistStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const MyObjStack = createStackNavigator<MyObjParamList>();
 
-function TabTwoNavigator() {
+function MyObjNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+    <MyObjStack.Navigator>
+      <MyObjStack.Screen
+        name="MyObjScreen"
+        component={MyObjScreen}
+        options={{
+          headerTitle: 'My IoT devices',
+          headerTitleStyle: {
+            color: '#DCDCDC',
+          },
+          headerStyle: {
+            backgroundColor: '#E91E63',
+          }
+        }}
+        
       />
-    </TabTwoStack.Navigator>
+    </MyObjStack.Navigator>
+  );
+}
+
+const SearchStack = createStackNavigator<SearchParamList>();
+
+function SearchNavigator() {
+  return (
+    <SearchStack.Navigator>
+      <SearchStack.Screen
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{ 
+          headerTitle: '',
+          headerStyle: {
+            backgroundColor: '#E91E63',
+          },
+        }}
+      />
+    </SearchStack.Navigator>
   );
 }

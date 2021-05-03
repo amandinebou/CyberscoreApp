@@ -9,14 +9,18 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  MyObj: undefined;
+  Search: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type HistParamList = {
+  HistScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type MyObjParamList = {
+  MyObjScreen: undefined;
+};
+
+export type SearchParamList = {
+  SearchScreen: undefined;
 };

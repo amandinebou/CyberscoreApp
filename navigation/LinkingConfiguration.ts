@@ -12,14 +12,19 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Hist: {
             screens: {
-              TabOneScreen: 'one',
+              HistScreen: 'hist',
+            }
+          },
+          MyObj: {
+            screens: {
+              MyObjScreen: 'obj',
             },
           },
-          TabTwo: {
+          Search: {
             screens: {
-              TabTwoScreen: 'two',
+              SearchScreen: 'search',
             },
           },
         },

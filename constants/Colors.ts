@@ -16,4 +16,8 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
+  rose: {
+    text: '#fff',
+    background: '#E91E63'
+  }
 };
