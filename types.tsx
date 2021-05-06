@@ -11,6 +11,7 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   MyObj: undefined;
   Search: undefined;
+  Hist: undefined;
 };
 
 export type HistParamList = {
