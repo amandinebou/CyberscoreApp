@@ -19,7 +19,22 @@ const SearchStackNavigator = createStackNavigator({
   DeviceDetail: {
     screen: DeviceDetail,
     navigationOptions: {
-        title: 'Détails'
+        title: ''
+    }
+  }
+})
+
+const FavoritesStackNavigator = createStackNavigator({
+  Favorites: {
+    screen: MyObjScreen,
+    navigationOptions: {
+      title: 'Favoris'
+    }
+  },
+  DeviceDetail: {
+    screen: DeviceDetail,
+    navigationOptions: {
+      title: ''
     }
   }
 })
@@ -37,7 +52,7 @@ const DevicesTabNavigator = createBottomTabNavigator(
       }
     },
     Favorites: {
-      screen: MyObjScreen,
+      screen: FavoritesStackNavigator,
       navigationOptions: {
         tabBarIcon: () => {
           return <Image

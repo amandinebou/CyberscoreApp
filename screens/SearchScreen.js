@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
  
-import { ActivityIndicator, Alert, FlatList, Text, StyleSheet, View, TextInput } from 'react-native';
+import { ActivityIndicator, Alert, TouchableOpacity, FlatList, Text, StyleSheet, View, TextInput } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 
 import DeviceDetail from '../components/DeviceDetail';
@@ -91,8 +91,12 @@ export default class SearchScreen extends React.Component {
           data={this.state.data}
           keyExtractor={ (item, index) => index.toString() }
           ItemSeparatorComponent={this.itemSeparator}
-          renderItem={({ item }) => <Text style={styles.row}
-          onPress={this.GetFlatListItem.bind(this, item)} >{item.title}</Text>}
+          renderItem={({ item }) => 
+          <View>
+         
+          <Text style={styles.row}
+          onPress={this.GetFlatListItem.bind(this, item)} >{item.title}</Text>
+          </View>}
           style={{ marginTop: 10 }} />
  
       </View>

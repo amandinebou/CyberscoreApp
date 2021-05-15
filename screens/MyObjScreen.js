@@ -1,25 +1,69 @@
-import * as React from 'react';
-import { Text, View, TextInput, ScrollView, TouchableOpacity, StyleSheet, Image, Button } from 'react-native';
+import React from 'react'
+import { View,FlatList, StyleSheet, Text } from 'react-native'
 
-export default function MyObjScreen() {
-  return (
-    <View style = {styles.container}>
+import { connect } from 'react-redux'
 
-        <ScrollView style = {styles.scrollContainer}>
+class MyObjScreen extends React.Component {
 
-        </ScrollView>
+  constructor(props) {
+ 
+    super(props);
+ 
+    
 
-    </View>
-  );
+  }
+
+  GetFlatListItem(device) {
+    this.props.navigation.navigate("DeviceDetail",  {myDevice: device});
+  }
+  
+  itemSeparator = () => {
+    return (
+      <View
+        style={{
+          height: .5,
+          width: "100%",
+          backgroundColor: "#000",
+        }}
+      />
+    );
+  }
+
+  render() {
+    
+    return (
+      <View>
+        <FlatList
+        data={this.props.favoritesDevice}
+        renderItem={({ item }) => 
+        <View>
+       
+        <Text style={styles.row}
+        onPress={this.GetFlatListItem.bind(this, item)} >{item.title}</Text>
+        </View> }  
+        style={{ marginTop: 10 }} 
+        keyExtractor={(item) => item.id}
+        ItemSeparatorComponent={this.itemSeparator}
+        
+      />
+
+      </View>
+      
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex : 1,
+  row: {
+    fontSize: 18,
+    padding: 12
   },
-  scrollContainer: {
-    flex: 1,
-    marginBottom: 100,
-  },
-});
+})
 
+const mapStateToProps = state => {
+  return {
+    favoritesDevice: state.favoritesDevice
+  }
+}
+
+export default connect(mapStateToProps)(MyObjScreen)

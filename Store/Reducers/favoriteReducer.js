@@ -1,5 +1,5 @@
 
-const initialState = { favoritesDevices: [] }
+const initialState = { favoritesDevice: [] }
 
 function toggleFavorite(state = initialState, action) {
   let nextState

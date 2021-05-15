@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, ActivityIndicator, ScrollView, Image, Button } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, ActivityIndicator, ScrollView, Image, Button } from 'react-native'
 
 
 import { connect } from 'react-redux'
@@ -18,14 +18,35 @@ class DeviceDetail extends React.Component {
     this.props.dispatch(action)
   }
 
+  _displayFavoriteImage(device) {
+    var sourceImage = require('../assets/images/nonfav.png')
+    if (this.props.favoritesDevice.findIndex(item => item.id === device.id) !== -1) {
+      // Device dans nos favoris
+      sourceImage = require('../assets/images/fav.png')
+    }
+    return (
+      <Image
+        style={styles.favorite_image}
+        source={sourceImage}
+      />
+    )
+}
+
 
   _displayDevice(device) {
+    //this.setState({device: device})
     if (device != undefined) {
       return (
         <ScrollView style={styles.scrollview_container}>
           
           <Text style={styles.title_text}>{device.id} {device.title}</Text>
-          <Button title="Favoris" onPress={() => this._toggleFavorite(device)}/>
+          
+          <TouchableOpacity
+              style={styles.favorite_container}
+              onPress={() => this._toggleFavorite(device)}>
+              {this._displayFavoriteImage(device)}
+          </TouchableOpacity>
+
           <Text style={styles.description_text}>blablablablalbablblalblablabla</Text>
           <Text style={styles.default_text}>Note : 7 / 10</Text>
         </ScrollView>
@@ -41,7 +62,7 @@ class DeviceDetail extends React.Component {
   }
 
   render() {
-    
+    //console.log(this.props)
     return (
       <View style={styles.main_container}>
         {this._displayDevice(this.props.navigation.state.params.myDevice)}
@@ -92,6 +113,13 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     marginTop: 5,
+  },
+  favorite_container: {
+    alignItems: 'center', 
+  },
+  favorite_image: {
+    width: 40,
+    height: 40
   }
 })
 
