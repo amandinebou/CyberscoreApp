@@ -39,7 +39,7 @@ class MyObjScreen extends React.Component {
         <View>
        
         <Text style={styles.row}
-        onPress={this.GetFlatListItem.bind(this, item)} >{item.title}</Text>
+        onPress={this.GetFlatListItem.bind(this, item)} >{item.nom}</Text>
         </View> }  
         style={{ marginTop: 10 }} 
         keyExtractor={(item) => item.id}

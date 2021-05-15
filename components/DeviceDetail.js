@@ -39,7 +39,7 @@ class DeviceDetail extends React.Component {
       return (
         <ScrollView style={styles.scrollview_container}>
           
-          <Text style={styles.title_text}>{device.id} {device.title}</Text>
+          <Text style={styles.title_text}>{device.id} {device.nom}</Text>
           
           <TouchableOpacity
               style={styles.favorite_container}

@@ -2,19 +2,16 @@
     "posts": [
       {
         "id": 1,
-        "title": "hello"
+        "nom": "hello"
       },
       {
         "id": 2,
-        "title": "coucou"
+        "nom": "coucou"
       },
       {
         "id": 3,
-        "title": "salut"
+        "nom": "salut"
       }
-    ],
-    "profile": {
-      "name": "typicode"
-    }
+    ]
     
 }
