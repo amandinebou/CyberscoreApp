@@ -8,8 +8,8 @@ class deviceItem extends React.Component {
         <View style={styles.main_container}>
         <View style={styles.content_container}>
           <View style={styles.header_container}>
-            <Text style={styles.title_text}>{device.title}</Text>
-            <Text style={styles.vote_text}>{device.vote_average}</Text>
+            <Text style={styles.title_text}>{device.name}</Text>
+            <Text style={styles.vote_text}>{device.note}</Text>
           </View>
           <View style={styles.description_container}>
             <Text style={styles.description_text} numberOfLines={6}>{device.overview}</Text>
