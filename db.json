@@ -6,82 +6,51 @@
         "entreprise": "Eve Home",
         "description": "La prise intelligente Eve Energy vous permet de contrôler vos appareils électriques ainsi que votre consommation d’énergie à distance. Pour pouvoir l’utiliser, il vous suffit de la brancher à votre installation électrique. De cette manière, vous pouvez éteindre ou allumer vos appareils sans avoir besoin d’être présent. Eve se connecte avec votre iPhone ou iPad. De ce fait, vous pouvez accéder aux fonctionnalités de vos appareils en temps réel. Elle effectue aussi l’analyse de votre consommation électrique. Elle peut également vous proposer une solution adéquate pour vous aider à faire des économies sur votre facture.",
         "note": 6.5,
-        "vulnerabilites": "CVE-2019-17518",
-        "detail": "The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock.",
-        "image": "https://www.rueducommerce.fr/medias/2fab5e04f0463715befbea46b5514b69/p_1000x1000/eve-energy.jpg"
-        },
-      {
-        "id": 2,
-        "nom": "coucou",
-        "entreprise": "",
-        "description": "",
-        "note": 6.5,
-        "vulnerabilites": "CVE-2019-17518 Detail : The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock."
+        "vulnerabilites": "CVE-2019-17518 ",
+        "detail": "Silent Length Overflow : The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock.",
+        "image": "https://cdn.shopify.com/s/files/1/0079/5602/products/Artboard_3_7cebad16-0a67-481b-8505-85571293e409_1024x1024.png"
       },
       {
+        "id": 2,
+        "nom": "August Smart Lock",
+        "entreprise": "August Home",
+        "description": "Comme toutes les serrures connectées, l'August Smart Lock se fixe sur votre porte côté intérieur, par-dessus votre serrure existante. Le principe consiste à commander l'action de rotation du loquet afin de verrouiller ou de déverrouiller votre domicile.",
+        "note": 6.5,
+        "vulnerabilites": "CVE-2019-17518",
+        "detail" : "Silent Length Overflow :The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock.",
+        "image": "pngfind.com/pngs/m/435-4350707_august-smart-lock-pro-connect-august-smart-lock.png"
+    },
+      {
         "id": 3,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
+        "nom": "eGeeTouch TSA Lock",
+        "entreprise": "eGeeTouch",
+        "description": "Pioneering the world with hassle free ONE-TOUCH to unlock and proximity track your luggage/bag. Fiddling tiny digit-wheel dials, recalling combination code or searching lost key experiencing with your ordinary lock are now things of the past. With our PROXIMITY TRACKING technology, you will never leave your bag or carry-on suitcase behind, thus travel with peace-of-mind. Granted with PATENTS and numerous Innovation & Design AWARDS in U.S., Japan & Germany.",
+        "note": 6.5,
+        "vulnerabilites": "CVE-2019-19193",
+        "detail" : "Invalid Connection Request :The Bluetooth Low Energy peripheral implementation on Texas Instruments SIMPLELINK-CC2640R2-SDK through 3.30.00.20 and BLE-STACK through 1.5.0 before Q4 2019 for CC2640R2 and CC2540/1 devices does not properly restrict the advertisement connection request packet on reception, allowing attackers in radio range to cause a denial of service (crash) via a crafted packet.",
+        "image" : "https://www.egeetouch.com/images/products/travel-padlock-yellow-front.png"
       },
       {
         "id": 4,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
+        "nom": "CubiTag",
+        "entreprise": "TracMo",
+        "description": "TracMo CubiTag helps you locate your things through the TracMo mobile app. Whatever they are! It's the world's first Bluetooth 5 tracker with a built-in motion sensor and replaceable battery. It's water resistant and Amazon Alexa compatible.",
+        "note": 6.5,
+        "vulnerabilites": "CVE-2019-17520",
+        "detail" : "Public Key Crash : The Bluetooth Low Energy implementation on Texas Instruments SDK through 3.30.00.20 for CC2640R2 devices does not properly restrict the SM Public Key packet on reception, allowing attackers in radio range to cause a denial of service (crash) via crafted packets.",
+        "image" : "https://cdn.shopify.com/s/files/1/0101/7485/7280/products/CubiTag-white2_2048x2048.png"
       },
       {
         "id": 5,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
-      },
-      {
-        "id": 6,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
-      },
-      {
-        "id": 7,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
-      },
-      {
-        "id": 8,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
-      },
-      {
-        "id": 9,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
-      },
-      {
-        "id": 10,
-        "nom": "salut",
-        "entreprise": "",
-        "description": "",
-        "note": 7,
-        "vulnerabilites": ""
+        "nom": "Fitbit Inspire",
+        "entreprise": "Fitbit",
+        "description": "Facile à utiliser, ce bracelet pour le sport offre un suivi continu de la fréquence cardiaque, des minutes en zone active et plus encore. Et avec un essai gratuit de 1 an de Fitbit Premium pour les nouveaux utilisateurs Fitbit Premium, vous bénéficiez de conseils personnalisés, d'analyses exclusives et d'outils de sommeil pour améliorer votre santé.",
+        "note": 8.8,
+        "vulnerabilites": "CVE-2019-16336, CVE-2019-17519, CVE-2019-17061, CVE-2019-17060",
+        "detail": "Link Layer Length Overflow,Link Layer LLID deadlock",
+        "image" : "https://www.fitbit.com/global/content/dam/fitbit/en_GB/global/pdp/charge-4/hero-static/black/charge4-black-device-3qt.png"
       }
+  
     ]
     
 }
