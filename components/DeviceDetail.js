@@ -17,6 +17,17 @@ class DeviceDetail extends React.Component {
     const action = { type: "TOGGLE_FAVORITE", value: device }
     this.props.dispatch(action)
   }
+  _color_note(device) {
+        if (device.note < 4) {
+            return (<Text style={styles.note_red }>{device.note}/10</Text>)
+        }
+        else if (device.note <7) {
+            return (<Text style={styles.note_orange}>{device.note}/10</Text>)
+        }
+        else{
+            return (<Text style={styles.note_green}>{device.note}/10</Text>)
+        }
+  }
 
   _displayFavoriteImage(device) {
     var sourceImage = require('../assets/images/nonfav.png')
@@ -46,9 +57,10 @@ class DeviceDetail extends React.Component {
               onPress={() => this._toggleFavorite(device)}>
               {this._displayFavoriteImage(device)}
           </TouchableOpacity>
-
+          <Image style={styles.image} source={device.image}/>
           <Text style={styles.description_text}> {device.description}</Text>
-          <Text style={styles.default_text}>{device.note}</Text>
+          {this._color_note(device)}
+          <Text style={styles.default_text}>{device.vulnerabilites}</Text>
         </ScrollView>
       )
     }
@@ -120,6 +132,39 @@ const styles = StyleSheet.create({
   favorite_image: {
     width: 40,
     height: 40
+  },
+  note_red: {
+    fontSize: 35,
+    flex: 1,
+    flexWrap: 'wrap',
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
+    marginBottom: 10,
+    textAlign: 'center',
+    color:'#ff0000'
+  },
+    note_orange: {
+    fontSize: 35,
+    flex: 1,
+    flexWrap: 'wrap',
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
+    marginBottom: 10,
+    textAlign: 'center',
+    color:'#ffa500'
+  },
+    note_green: {
+    fontSize: 35,
+    flex: 1,
+    flexWrap: 'wrap',
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
+    marginBottom: 10,
+    textAlign: 'center',
+    color:'#00ff00'
   }
 })
 
