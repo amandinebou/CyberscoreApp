@@ -50,7 +50,7 @@ export default class SearchScreen extends React.Component {
  
   searchData(text) {
     const newData = this.arrayholder.filter(item => {
-      const itemData = item.title.toUpperCase();
+      const itemData = item.nom.toUpperCase();
       const textData = text.toUpperCase();
       return itemData.indexOf(textData) > -1
     });
@@ -95,7 +95,7 @@ export default class SearchScreen extends React.Component {
           <View>
          
           <Text style={styles.row}
-          onPress={this.GetFlatListItem.bind(this, item)} >{item.title}</Text>
+          onPress={this.GetFlatListItem.bind(this, item)} >{item.nom}</Text>
           </View>}
           style={{ marginTop: 10 }} />
  
