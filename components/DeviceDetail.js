@@ -34,12 +34,12 @@ class DeviceDetail extends React.Component {
 
 
   _displayDevice(device) {
-    //this.setState({device: device})
+
     if (device != undefined) {
       return (
         <ScrollView style={styles.scrollview_container}>
           
-          <Text style={styles.title_text}>{device.id} {device.nom}</Text>
+          <Text style={styles.title_text}> {device.nom}</Text>
           
           <TouchableOpacity
               style={styles.favorite_container}
@@ -47,8 +47,8 @@ class DeviceDetail extends React.Component {
               {this._displayFavoriteImage(device)}
           </TouchableOpacity>
 
-          <Text style={styles.description_text}>blablablablalbablblalblablabla</Text>
-          <Text style={styles.default_text}>Note : 7 / 10</Text>
+          <Text style={styles.description_text}> {device.description}</Text>
+          <Text style={styles.default_text}>{device.note}</Text>
         </ScrollView>
       )
     }

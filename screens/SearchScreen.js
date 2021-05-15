@@ -95,7 +95,8 @@ export default class SearchScreen extends React.Component {
           <View>
          
           <Text style={styles.row}
-          onPress={this.GetFlatListItem.bind(this, item)} >{item.nom}</Text>
+          onPress={this.GetFlatListItem.bind(this, item)} >
+          Coucoucvcccc {item.nom}</Text>
           </View>}
           style={{ marginTop: 10 }} />
  
