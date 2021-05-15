@@ -100,8 +100,11 @@ const styles = StyleSheet.create({
     flex: 1
   },
   image: {
-    height: 169,
-    margin: 5
+    height: 200,
+    width: 200,
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   title_text: {
     fontWeight: 'bold',
@@ -118,7 +121,7 @@ const styles = StyleSheet.create({
   description_text: {
     fontStyle: 'italic',
     color: '#666666',
-    margin: 5,
+    margin: 15,
     marginBottom: 15
   },
   default_text: {

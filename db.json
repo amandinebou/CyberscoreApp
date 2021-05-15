@@ -6,7 +6,8 @@
         "entreprise": "Eve Home",
         "description": "La prise intelligente Eve Energy vous permet de contrôler vos appareils électriques ainsi que votre consommation d’énergie à distance. Pour pouvoir l’utiliser, il vous suffit de la brancher à votre installation électrique. De cette manière, vous pouvez éteindre ou allumer vos appareils sans avoir besoin d’être présent. Eve se connecte avec votre iPhone ou iPad. De ce fait, vous pouvez accéder aux fonctionnalités de vos appareils en temps réel. Elle effectue aussi l’analyse de votre consommation électrique. Elle peut également vous proposer une solution adéquate pour vous aider à faire des économies sur votre facture.",
         "note": 6.5,
-        "vulnerabilites": "CVE-2019-17518 Detail : The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock.",
+        "vulnerabilites": "CVE-2019-17518",
+        "detail": "The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock.",
         "image": "https://www.rueducommerce.fr/medias/2fab5e04f0463715befbea46b5514b69/p_1000x1000/eve-energy.jpg"
         },
       {
