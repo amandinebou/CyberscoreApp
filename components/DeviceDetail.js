@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity, ActivityIndicator, ScrollView, Image, Button } from 'react-native'
-
+import Panel from './Panel';
 
 import { connect } from 'react-redux'
 
@@ -18,15 +18,47 @@ class DeviceDetail extends React.Component {
     this.props.dispatch(action)
   }
   _color_note(device) {
-        if (device.note < 4) {
-            return (<Text style={styles.note_red }>{device.note}/10</Text>)
+        if (device.note == 0) {
+            return (
+            <Text style={styles.note_green }>No Risk <br/>{device.note}/10</Text>)
+        }
+        else if (device.note <4 ) {
+            return (
+            <Text style={styles.note_green }>Low Risk <br/>{device.note}/10</Text>)
+        }
+        else if (device.note <7 ) {
+            return (
+            <Text style={styles.note_orange }>Medium Risk <br/>{device.note}/10</Text>)
+        }
+        else if (device.note <9 ) {
+            return (
+            <Text style={styles.note_red }>High Risk <br/>{device.note}/10</Text>)
+        }       
+        else{
+            return (
+            <Text style={styles.note_red }>Critical Risk <br/>{device.note}/10</Text>)
+        }
+  }
+
+  _displayStarRating(device) {
+        var starImage = require('../assets/images/1star.png')
+        if (device.note == 0) {
+            starImage = require('../assets/images/5stars.png')
+        }
+        else if (device.note <4) {
+            starImage = require('../assets/images/4stars.png')
         }
         else if (device.note <7) {
-            return (<Text style={styles.note_orange}>{device.note}/10</Text>)
+            starImage = require('../assets/images/3stars.png')
         }
-        else{
-            return (<Text style={styles.note_green}>{device.note}/10</Text>)
+        else if (device.note <9) {
+            starImage = require('../assets/images/2stars.png')
         }
+
+        return (
+            <Image style={styles.image_rating} source={starImage}/>
+        )
+
   }
 
   _displayFavoriteImage(device) {
@@ -58,9 +90,12 @@ class DeviceDetail extends React.Component {
               {this._displayFavoriteImage(device)}
           </TouchableOpacity>
           <Image style={styles.image} source={device.image}/>
+          {this._displayStarRating(device)}
           <Text style={styles.description_text}> {device.description}</Text>
           {this._color_note(device)}
-          <Text style={styles.default_text}>{device.vulnerabilites}</Text>
+          <Panel title={device.vulnerabilites}>
+                <Text style={styles.default_text}>{device.detail}</Text>
+          </Panel>
         </ScrollView>
       )
     }
@@ -104,7 +139,17 @@ const styles = StyleSheet.create({
     width: 200,
     display: 'block',
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    marginTop: 15
+  },
+
+  image_rating: {
+    height: 30,
+    width: 180,
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 10
   },
   title_text: {
     fontWeight: 'bold',
@@ -122,12 +167,11 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     color: '#666666',
     margin: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    textAlign: "center"
   },
   default_text: {
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 5,
+    margin: 15
   },
   favorite_container: {
     alignItems: 'center', 
@@ -137,7 +181,7 @@ const styles = StyleSheet.create({
     height: 40
   },
   note_red: {
-    fontSize: 35,
+    fontSize: 20,
     flex: 1,
     flexWrap: 'wrap',
     marginLeft: 5,
@@ -148,7 +192,7 @@ const styles = StyleSheet.create({
     color:'#ff0000'
   },
     note_orange: {
-    fontSize: 35,
+    fontSize: 20,
     flex: 1,
     flexWrap: 'wrap',
     marginLeft: 5,
@@ -159,7 +203,7 @@ const styles = StyleSheet.create({
     color:'#ffa500'
   },
     note_green: {
-    fontSize: 35,
+    fontSize: 20,
     flex: 1,
     flexWrap: 'wrap',
     marginLeft: 5,
