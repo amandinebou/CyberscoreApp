@@ -18,7 +18,7 @@
         "note": 6.5,
         "vulnerabilites": "CVE-2019-17518",
         "detail" : "Silent Length Overflow :The Bluetooth Low Energy implementation on Dialog Semiconductor SDK through 1.0.14.1081 for DA1468x devices responds to link layer packets with a payload length larger than expected, allowing attackers in radio range to cause a buffer overflow via a crafted packet. This affects, for example, August Smart Lock.",
-        "image": "pngfind.com/pngs/m/435-4350707_august-smart-lock-pro-connect-august-smart-lock.png"
+        "image": "https://pngfind.com/pngs/m/435-4350707_august-smart-lock-pro-connect-august-smart-lock.png"
     },
       {
         "id": 3,
