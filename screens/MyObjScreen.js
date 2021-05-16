@@ -1,5 +1,5 @@
 import React from 'react'
-import { View,FlatList, StyleSheet, Text, Image } from 'react-native'
+import { View, TouchableOpacity, FlatList, StyleSheet, Text, Image } from 'react-native'
 
 import { connect } from 'react-redux'
 
@@ -39,23 +39,23 @@ class MyObjScreen extends React.Component {
         ItemSeparatorComponent={this.itemSeparator}
         renderItem={({ item }) => 
         
-          <View style={styles.main_container} >
-        
-        <Image style = {styles.image} source = {item.image} />
-
-        <View style={styles.content_container}>
-          <View style={styles.header_container}>
-            <Text style={styles.title_text} onPress={this.GetFlatListItem.bind(this, item)}>{item.nom}</Text>
-            <Text style={styles.vote_text}>{item.note}</Text>
+        <View style={styles.main_container} >
+          <TouchableOpacity onPress={this.GetFlatListItem.bind(this, item)}>
+            <Image style = {styles.image} source = {item.image}  onClick={() => this.GetFlatListItem.bind(this, item)}/>
+          </TouchableOpacity>
+          <View style={styles.content_container}  onClick={() => this.GetFlatListItem.bind(this, item)}>
+            <View style={styles.header_container} >
+              <Text style={styles.title_text} onPress={this.GetFlatListItem.bind(this, item)}>{item.nom}</Text>
+              <Text style={styles.vote_text} onPress={this.GetFlatListItem.bind(this, item)}>{item.note}</Text>
+            </View>
+            <View style={styles.description_container}>
+              <Text style={styles.description_text} numberOfLines={6} onPress={this.GetFlatListItem.bind(this, item)}>{item.description}</Text>
+            </View>
+            <View style={styles.entr_container}>
+              <Text style={styles.entr_text} onPress={this.GetFlatListItem.bind(this, item)}>{item.entreprise}</Text>
+            </View>
           </View>
-          <View style={styles.description_container}>
-            <Text style={styles.description_text} numberOfLines={6}>{item.description}</Text>
-          </View>
-          <View style={styles.entr_container}>
-            <Text style={styles.entr_text}>{item.entreprise}</Text>
-          </View>
-        </View>
-      </View>}  
+        </View>}
         style={{ marginTop: 10 }} 
         
         
